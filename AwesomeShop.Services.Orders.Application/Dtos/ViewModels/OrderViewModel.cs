@@ -20,6 +20,9 @@ namespace AwesomeShop.Services.Orders.Application.Dtos.ViewModels
 
         public static OrderViewModel FromEntity(Order order)
         {
+            if (order == null)
+                return null;
+
             return new OrderViewModel(order.Id, order.TotalPrice, order.CreatedAt, order.Status.ToString());
         }
 
