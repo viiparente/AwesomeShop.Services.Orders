@@ -29,9 +29,12 @@ namespace AwesomeShop.Services.Orders.Api
         public void ConfigureServices(IServiceCollection services)
         {
             services
+                .AddMessageBus()
                 .AddMongo()
                 .AddRepositories()
                 .AddHandlers();
+
+            services.AddHttpClient();
 
             services.AddControllers();
             services.AddSwaggerGen(c =>
