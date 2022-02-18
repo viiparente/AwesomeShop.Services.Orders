@@ -1,6 +1,7 @@
 ﻿using AwesomeShop.Services.Orders.Core.Repositories;
 using AwesomeShop.Services.Orders.Infrastructure.MessageBus;
 using AwesomeShop.Services.Orders.Infrastructure.Persistence;
+using AwesomeShop.Services.Orders.Infrastructure.ServiceDiscovery;
 using Consul;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.Configuration;
@@ -77,7 +78,7 @@ namespace AwesomeShop.Services.Orders.Infrastructure
                 consulConfig.Address = new Uri(address);
             }));
 
-            //services.AddTransient<IServiceDiscoveryService, ConsulService>();
+            services.AddTransient<IServiceDiscoveryService, ConsulService>();
 
             return services;
         }
@@ -107,6 +108,7 @@ namespace AwesomeShop.Services.Orders.Infrastructure
 
             return app;
         }
+     
 
     }
 }

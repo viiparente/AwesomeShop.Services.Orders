@@ -10,10 +10,6 @@
       <PackageReference Include="Microsoft.Extensions.Hosting" Version="5.0.0" />
     </ItemGroup>
 
-    <ItemGroup>
-      <Folder Include="Dtos\IntegrationDtos\" />
-    </ItemGroup>
-
     <PropertyGroup>
         <TargetFramework>net5.0</TargetFramework>
     </PropertyGroup>
